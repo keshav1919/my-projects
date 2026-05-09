@@ -3,31 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Appointment Booking</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-.main{
-    height: 100vh;
-    display: flex;
-    max-width: 100%;
-    overflow: auto;
-    width: 100%;
-}
-.box1{
-    width: 500px;
-    background-color: red;
-    flex-shrink: 0;
-}
-.box2{
-    width: 50%;
-    background-color: blue;
-      flex-shrink: 0;
-}
+        :root {
+            --primary: #fa7a5e;
+            --primary-hover: #e56a4f;
+            --text-dark: #222222;
+            --text-light: #777777;
+            --border-color: #e4e4e4;
+            --card-border: #fcece8;
+            --bg-color: #ffffff;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1100px;
+            width: 100%;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        /* --- Left Section (Info) --- */
+        .info-section {
+            flex: 1;
+            padding-top: 20px;
+        }
+
+        .info-section h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #000;
+        }
+
+        .description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 1.05rem;
+            margin-bottom: 40px;
+        }
+
+        .schedule {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .schedule-row {
+            display: flex;
+            font-size: 1.15rem;
+        }
+
+        .day {
+            font-weight: 500;
+            color: #333;
+            width: 180px;
+        }
+
+        .time {
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .btn {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 14px 45px;
+        }
+
+        .btn-outline:hover {
+            background: #fff5f2;
+        }
+
+        /* --- Right Section (Form) --- */
+        .form-section {
+            flex: 1.1;
+        }
+
+        .form-card {
+            background: var(--bg-color);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+        }
+
+        .form-header {
+            padding: 30px 35px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .form-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: #000;
+        }
+
+        .appointment-form {
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper input,
+        .input-wrapper select {
+            width: 100%;
+            padding: 14px 45px 14px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.2s ease;
+            background: #fff;
+        }
+
+        .input-wrapper input::placeholder {
+            color: #b5b5b5;
+        }
+
+        .input-wrapper input:focus,
+        .input-wrapper select:focus {
+            border-color: var(--primary);
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            right: 18px;
+            color: #a0a0a0;
+            pointer-events: none;
+            font-size: 0.95rem;
+        }
+
+        /* Select Dropdown Styling */
+        .input-wrapper select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            color: #b5b5b5; /* Matches placeholder text color for exact look */
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            font-size: 1.05rem;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                gap: 50px;
+            }
+            .info-section, .form-section {
+                width: 100%;
+            }
+            .input-row {
+                flex-direction: column;
+                gap: 22px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="main">
-        <div class="box1"></div>
-        <div class="box2"></div>
+
+    <div class="container">
+        <!-- Left Information Section -->
+        <div class="info-section">
+            <h1>Working Hours:</h1>
+            <p class="description">Our team is available to assist you Monday through Saturday, from<br>9:00 AM to 7:00 PM. We strive to respond promptly to all inquiries<br>during these hours to ensure you receive the best possible support and<br>service.</p>
+            
+            <div class="schedule">
+                <div class="schedule-row">
+                    <span class="day">Monday - Friday</span>
+                    <span class="time">07AM-10PM</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Saturday</span>
+                    <span class="time">09AM-10PM</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Sunday</span>
+                    <span class="time">Closed</span>
+                </div>
+            </div>
+
+            <button class="btn btn-outline">Contact</button>
+        </div>
+
+        <!-- Right Form Section -->
+        <div class="form-section">
+            <div class="form-card">
+                <div class="form-header">
+                    <h2>Book Appointment</h2>
+                </div>
+                
+                <form class="appointment-form" onsubmit="event.preventDefault();">
+                    <!-- First & Last Name -->
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>*First Name</label>
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="Dianne">
+                                <i class="far fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>*Last name</label>
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="Kumar">
+                                <i class="far fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email & Phone -->
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <div class="input-wrapper">
+                                <input type="email" placeholder="Email Address">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <div class="input-wrapper">
+                                <input type="tel" placeholder="Phone Number">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="input-group">
+                        <label>Select Date</label>
+                        <div class="input-wrapper">
+                            <input type="text" placeholder="2/4/2025">
+                            <i class="far fa-calendar-minus"></i>
+                        </div>
+                    </div>
+
+                    <!-- Time -->
+                    <div class="input-group">
+                        <label>Select Time</label>
+                        <div class="input-wrapper">
+                            <input type="text" placeholder="09AM-10PM">
+                            <i class="far fa-clock"></i>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="input-group">
+                        <label>Select Services</label>
+                        <div class="input-wrapper">
+                            <select>
+                                <option value="" disabled selected hidden>Hair Stylist</option>
+                                <option value="hair">Hair Stylist</option>
+                                <option value="makeup">Makeup Artist</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Make An Appointment</button>
+                </form>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
