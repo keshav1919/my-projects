@@ -1,0 +1,407 @@
+ @media (max-width: 1270px) {
+
+     /* ----------------- sec-3--------------  */
+     .about-primary-content-box h1 {
+         font-size: 28px;
+     }
+
+     .about-primary-content-box p {
+         font-size: 14px;
+         margin-bottom: 5px;
+         max-width: 270px;
+         /* white-space: nowrap; */
+
+
+     }
+
+     .second-line {
+         display: none;
+         white-space: nowrap;
+     }
+
+     .about-primary-content-box button {
+         padding: 10px 20px;
+         font-size: 13px;
+     }
+ }
+
+ @media (max-width: 1024px) {
+
+     /* ----------------------- nav + header -------------------------- */
+     .menu-btn {
+         display: block;
+         margin: 0;
+         padding: 0;
+     }
+
+     .nav-btn {
+         display: none;
+     }
+
+     .nav-book-box {
+         display: none;
+     }
+
+     nav {
+
+         padding: 0;
+         display: flex;
+         justify-content: space-between;
+     }
+
+     /* ____________________________________________
+       ============= hero section=================  */
+
+     .banner-left {
+         max-width: 100%;
+         width: 100%;
+         justify-content: space-between;
+     }
+
+     .main-flex-box3 {
+         display: none;
+     }
+
+     .bar-bg {
+         gap: 242px;
+     }
+
+     .common-bar-box h1 {
+         font-size: 36px;
+     }
+
+     .common-bar-box p {
+         font-size: 13px;
+         font-weight: normal;
+     }
+
+     .main-page::after {
+         display: none;
+     }
+
+
+     /* ______________===brand logo===_____________ */
+     /* .about-main-flex2 {
+    padding-top: 110px;
+    flex-shrink: 1;
+    gap: 64px;
+} */
+/* ----------------- sec-3------------  */
+
+
+ }
+
+ /* ------------------------------------------- */
+
+ @media (max-width: 970px) {
+    .about-main-box{
+        flex-direction: column;
+    }
+    .about-main-flex2{
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-shrink: 1;
+        gap: 20px;
+        /* overflow: auto; */
+
+    }
+
+    .about-primary-img{
+    max-width: 420px;
+}
+
+.about-content-box .block{
+    font-size: 42px
+}
+
+     .about-main-flex2 img{
+        max-width: 330px;
+     }
+ }
+
+ @media (max-width: 768px) {
+
+     /* ============ hero section=================   */
+     .sec-1 {
+         /* margin-bottom: 143px; */
+         position: static;
+     }
+
+     .sec-1 .container {
+         position: relative;
+         margin: 0;
+         padding: 0;
+     }
+
+     .main-page {
+         padding: 0;
+         margin: 0px 20px;
+         position: static;
+         display: flex;
+         flex-direction: column;
+     }
+
+     .flex-box1-content {
+         text-align: center;
+         max-width: 100%;
+
+     }
+
+     .main-flex-box1 {
+         gap: 40px;
+     }
+
+     .img-flex1-box {
+         position: relative;
+     }
+
+     .img-flex1 {
+         display: none;
+     }
+
+     .img-flex2-1 {
+         margin-bottom: 47px;
+     }
+
+     .img-flex1-2 {
+         display: block;
+         left: 28px;
+         z-index: 2;
+         bottom: 110px;
+         object-fit: contain;
+         max-width: 224px;
+         width: 100%;
+         height: auto;
+         /* max-width: 50%; */
+         position: absolute;
+     }
+
+
+     .flex-box1-content img {
+         position: absolute;
+         top: -7.5px;
+         left: -11px;
+         max-width: 14px;
+         width: 100%;
+         height: auto;
+     }
+
+     .banner-left {
+         flex-direction: column;
+     }
+
+
+
+
+
+     .main-flex-box2 {
+         display: flex;
+
+         justify-content: right;
+     }
+
+     .bar-bg {
+         gap: 0px;
+         border-top-left-radius: 26px;
+         border-top-right-radius: 26px;
+         flex-direction: column;
+         padding: 20px 20px;
+     }
+
+     .rounded-logo {
+         max-width: 145px;
+         max-height: 145px;
+     }
+
+     .rounded-logo-mini {
+         max-width: 115px;
+         max-height: 115px;
+     }
+
+     .salon-badge {
+         width: 125px;
+         height: 125px;
+         top: -5px;
+         left: -4px;
+     }
+
+     .bar-left-contentbox {
+         justify-content: space-between;
+         padding: 0px 10%;
+         /* max-width: 0; */
+         max-width: 100%;
+     }
+
+     .bar-right-contentbox {
+         padding: 0px 10%;
+         /* max-width: 0; */
+         max-width: 100%;
+     }
+
+     .common-bar-box {
+         width: fit-content;
+         gap: 0;
+         align-items: center;
+     }
+
+     /* ____________ section 2 ______________ */
+
+     .categorie-content-box .common-h1 {
+         font-size: 24px;
+     }
+
+     .categorie {
+         gap: 24px;
+     }
+
+     .categorie-content-box {
+         gap: 5px;
+
+     }
+
+     .categorie-grid {
+         flex-direction: column;
+     }
+
+     .categorie-grid-box2 img {
+         max-width: 100%;
+         width: 100%;
+         height: auto;
+     }
+
+     .categorie-grid {
+         gap: 10px;
+     }
+
+     .categorie-grid-box1 {
+         column-gap: 15px;
+         row-gap: 10px;
+     }
+
+     /* ------------------- sec-3-------------  */
+      .about-main-flex2 img{
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+     }
+ }
+
+ /* ----------------------------------------- */
+ @media (max-width: 590px) {
+
+     /* __________hero section____________ */
+     .sec-1 {
+         padding-top: 40px;
+     }
+
+     .hero-p-text {
+         font-size: 14px;
+     }
+
+     .hero-h1-text {
+         font-size: 36px;
+         list-style: none;
+     }
+
+     .rounded-logo {
+         max-width: 120px;
+         max-height: 120px;
+     }
+
+     .rounded-logo-mini {
+         max-width: 90px;
+         max-height: 90px;
+     }
+
+     .salon-badge {
+         width: 100px;
+         height: 100px;
+         top: -5px;
+         left: -5px;
+     }
+
+     .img-flex2-1 {
+         max-width: 380px;
+         margin-bottom: 47px;
+     }
+
+     .img-flex1-2 {
+         left: 7px;
+         max-width: 180px;
+     }
+
+     .start-bg {
+         display: none;
+     }
+
+ }
+
+ /* ------------------------------------------- */
+
+ @media (max-width: 425px) {
+     /* ------------------- nav and head  */
+
+     header {
+         padding-top: 43px;
+         padding-bottom: 0px;
+     }
+
+     .logo {
+         display: flex;
+         align-items: center;
+         margin: 0;
+         max-width: 105px;
+         height: auto;
+         max-height: 30px;
+     }
+
+     /* -------------------- hero section--------------  */
+     .hero-p-text {
+         font-size: 12px;
+     }
+
+     .hero-h1-text {
+         font-size: 32px;
+         list-style: none;
+         font-weight: 600;
+     }
+
+     .rounded-logo {
+         max-width: 92px;
+         max-height: 92px;
+     }
+
+     .rounded-logo-mini {
+         max-width: 72px;
+         max-height: 72px;
+     }
+
+     .salon-badge {
+         width: 80px;
+         height: 80px;
+         top: -4px;
+         left: -4px;
+     }
+
+     .img-flex2-1 {
+         max-width: 319px;
+         margin-bottom: 47px;
+     }
+
+     .img-flex1-2 {
+         max-width: 152px;
+         left: 7px;
+     }
+
+     .start-bg {
+         display: none;
+     }
+
+     .hero-h1-text {
+         display: block;
+     }
+ }
+
+ /* ------------------------------------------- */
+
+ @media (max-width: 375px) {}
